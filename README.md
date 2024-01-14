@@ -60,7 +60,8 @@ This repository is the official implementation of the following paper:
   ```shell
   python train.py --data ./data/target_dataset.zip --metric-data ./data/target_dataset_full.zip \
         --outdir runs/target_dataset --resume pkls/target_dataset.pkl \
-        --gpus 1 --kimg 400 --snap 10 --transfer learn_alpha_cdw --reg alpha_l2 --lambda-reg 0.1
+        --gpus 1 --kimg 400 --snap 10 --transfer learn_alpha_cdw \
+        --reg alpha_l2 --lambda-reg 0.1 --lrate 0.0005    # A smaller learning rate should be used
   ```
 - :warning:You should use the model that has been transferred to the target domain with ```--resume```, rather than that pretrained on the source dataset.
   
