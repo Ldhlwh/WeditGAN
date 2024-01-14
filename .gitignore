@@ -1,0 +1,12 @@
+__pycache__/
+.cache/
+/archive_runs/
+/archive_runs
+/gifs/
+/pkls/
+/pkls
+/runs*/
+/runs*
+/gen_img/
+/test/
+/script/
