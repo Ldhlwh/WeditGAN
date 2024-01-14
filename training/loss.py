@@ -69,6 +69,9 @@ class StyleGAN2Loss(Loss):
             if self.cl in ['g_feat', 'gd_feat']:
                 img, feat_dict = self.G_synthesis(ws, output_feat = True)
                 other_rtn['feat_dict'] = feat_dict
+            elif self.reg == 'alpha_l2':
+                img, alpha_dict = self.G_synthesis(ws, output_alpha = True)
+                other_rtn['alpha_dict'] = alpha_dict
             else:
                 img = self.G_synthesis(ws)  
 
@@ -143,6 +146,15 @@ class StyleGAN2Loss(Loss):
                             training_stats.report(f'Loss/G/perp_reg{res}', cur_loss)
                             loss_reg = loss_reg + cur_loss
                             w_idx += block.num_conv
+                        loss_Gmain = loss_Gmain + self.lambda_reg * loss_reg
+
+                    elif self.reg == 'alpha_l2':
+                        loss_reg = 0.0
+                        alpha_dict = other_rtn['alpha_dict']
+                        for res in self.G_synthesis.block_resolutions:
+                            cur_loss = (alpha_dict[res] ** 2).sum(dim = (1, 2))
+                            training_stats.report(f'Loss/G/alpha_l2_reg{res}', cur_loss)
+                            loss_reg = loss_reg + cur_loss
                         loss_Gmain = loss_Gmain + self.lambda_reg * loss_reg
                         
                     else:

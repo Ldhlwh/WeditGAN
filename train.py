@@ -505,7 +505,7 @@ class CommaSeparatedList(click.ParamType):
 # WeditGAN
 @click.option('--transfer', help='Transfer mode [default: None]', 
     type=click.Choice(['const_delta_w', 'adapt_delta_w', 'learn_alpha_cdw', 'const_delta_w_alpha']))
-@click.option('--reg', help='Regularization mode [default: None]', type=click.Choice(['perp']))
+@click.option('--reg', help='Regularization mode [default: None]', type=click.Choice(['perp', 'alpha_l2']))
 @click.option('--cl', help='Contrastive loss mode [default: None]', type=click.Choice(['g_feat', 'gd_feat']))
 
 @click.option('--res-st', help='Starting resolution of the transfer mode', type=int)
