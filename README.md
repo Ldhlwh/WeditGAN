@@ -25,7 +25,7 @@ This repository is the official implementation of the following paper:
 - If you wish to try your own source/target datasets, put all the images into a single folder and run
     ```shell
     python dataset_tool.py --source /path/to/image/folder \
-        --dest ./data/target_dataset.zip \
+        --dest ./data/source_or_target_dataset.zip \
         --width 256 --height 256
     ```
     
@@ -78,7 +78,7 @@ This repository is the official implementation of the following paper:
     ```
 - Or, if you just wish to have a glimpse of the performance of a model, run the following command:
     ```shell
-    python generate.py --network runs/target_dataset/path/to/a/model.pkl --cmp
+    python generate.py --network runs/target_dataset/path/to/a/network-snapshot-<kimg>.pkl --cmp
     ```
      to generate samples of target dataset, source images and their corresponding target images and concatenate them under the same directory with ```model.pkl```, named ```cmp<kimg>.jpg```.
      
