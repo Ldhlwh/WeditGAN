@@ -5,7 +5,7 @@
 This repository is the official implementation of the following paper:
 
 > **WeditGAN: Few-Shot Image Generation via Latent Space Relocation**<br>
-> [Yuxuan Duan](https://github.com/Ldhlwh), [Li Niu](http://www.ustcnewly.com/), [Yan Hong](https://github.com/hy-zpg), [Liqing Zhang](https://bcmi.sjtu.edu.cn/~zhangliqing/)<br>
+> [Yuxuan Duan](https://ldhlwh.github.io/), [Li Niu](http://www.ustcnewly.com/), [Yan Hong](https://github.com/hy-zpg), [Liqing Zhang](https://bcmi.sjtu.edu.cn/~zhangliqing/)<br>
 > The 38th AAAI Conference on Artificial Intelligence (AAAI 2024)<br>
 > https://arxiv.org/abs/2305.06671
 
